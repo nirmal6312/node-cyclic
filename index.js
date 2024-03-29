@@ -38,8 +38,9 @@ console.log(err)
     }
    
 });
-app.get("/",(req,res)=>{
-   res.send("ghyee")
+app.get("/",async(req,res)=>{
+ const myusers = await SignupUser.find()
+ res.send(myusers)
 })
 
 
